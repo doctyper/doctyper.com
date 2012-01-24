@@ -1,0 +1,121 @@
+section#about
+  h2
+    | About
+    a href="/resume/" View resume
+  
+  p
+    | I am Richard Hererra. I work with HTML5, SCSS and JavaScript. 
+    a href="/resume/" More about me.
+
+section#work
+  h2
+    | Work
+    a href="#"
+      | View 
+      strong
+        | all 
+      em
+        | less 
+      | work
+  
+  .carousel
+    ol
+      li
+        div
+          figure
+            .image
+              img src="/img/google-inside-search.png" alt="Google Inside Search" width="940" height="410"
+            figcaption
+              h3 Google Inside Search
+      li
+        div
+          figure
+            .image
+              img src="/img/legendary.png" alt="Legendary Pictures" width="940" height="478"
+            figcaption
+              h3 Legendary Pictures
+      li
+        div
+          figure
+            .image
+              img src="/img/where-it-went-down.png" alt="Where It Went Down" width="880" height="408"
+            figcaption
+              h3 Where It Went Down
+      li
+        div
+          figure
+            .image
+              img src="/img/logitech.png" alt="Logitech" width="880" height="479"
+            figcaption
+              h3 Logitech
+      li
+        div
+          figure
+            .image
+              img src="/img/south-park-studios.png" alt="South Park Studios" width="964" height="418"
+            figcaption
+              h3 South Park Studios
+    
+    ul
+      - for i in (1..5) do
+        li #{i}
+
+section#social
+  #twitter
+    h2
+      | Tweets
+      a href="#" Visit doctyper on Twitter
+    
+    ul
+      script id="toot" type="text/html"
+        li
+          h4
+            | {{screen_name}}
+            em {{name}}
+          p
+            | {{text}}
+          .meta
+            a href="//twitter.com/#!/{{screen_name}}/status/{{id}}" {{created}} 
+            | via {{source_text}}
+        
+    
+  #github
+    h2
+      | GitHub
+      a href="#" Visit doctyper on GitHub
+    
+    ul
+      script id="event" type="text/html"
+        li class="{{action}}"
+          h4
+            a href="{{profile}}" {{screen_name}} 
+            | {{action}} {{ref}} 
+            | {{#qualifier}}
+            | at 
+            | {{/qualifier}}
+            a href="{{repo.url}}" {{repo.name}}
+          h5 {{created}}
+          ol
+            | {{#commits}}
+            li
+              a href="{{url}}" {{sha}} 
+              | {{message}}
+            | {{/commits}}
+
+section#contact
+  h2 Contact
+
+  form id="form1" name="form1" class="wufoo topLabel page" enctype="multipart/form-data" method="post" action="https://doctyper.wufoo.com/forms/z7x3k1/#public"
+    fieldset
+      label for="name" Name
+      input id="Field107" name="Field107" type="text" class="field text medium" value="" maxlength="255" required="required"
+
+      label for="email" Email
+      input id="Field3" name="Field3" type="email" class="field text medium" value="" maxlength="255" required="required"
+
+    fieldset
+      label for="thoughts" Thoughts
+      textarea id="Field4"name="Field4" class="field textarea medium" rows="10" cols="50" required="required"
+
+      input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Send Message"
+      input type="hidden" id="idstamp" name="idstamp" value="1XNKpPFkam5PUzfUnBQEyiPCB4mw3dIdycrXOHp9exQ="

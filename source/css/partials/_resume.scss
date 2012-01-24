@@ -1,0 +1,48 @@
+#resume {
+	line-height: 1.3;
+	@include pie-clearfix;
+
+	> div {
+		width: 50%;
+		float: left;
+
+		&:first-child {
+			padding-right: 20px;
+		}
+
+		&:last-child {
+			padding-left: 20px;
+		}
+	}
+
+	h2 {
+		margin-bottom: 10px;
+	}
+
+	h3, p {
+		font-size: 11px;
+	}
+
+	h3:not(:first-of-type) {
+		margin-top: 15px;
+	}
+
+	p {
+		color: #888;
+		margin: 0 0 5px;
+		max-width: 80%;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	blockquote p {
+		font-size: 14px;
+		text-transform: uppercase;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

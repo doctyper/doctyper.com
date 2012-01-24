@@ -1,0 +1,39 @@
+header {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 17px;
+
+	#me {
+		margin-top: 40px;
+		padding-top: 55px;
+		background: inline-image("geek.png") no-repeat center top;
+	}
+
+	h1 {
+		font-size: 100px;
+		letter-spacing: -3px;
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	}
+
+	h3 {
+		color: #ccc;
+
+		&:before {
+			content: "{";
+		}
+
+		&:after {
+			content: "}";
+		}
+	}
+
+	nav {
+		margin: 35px 0 45px;
+	}
+
+	li {
+		margin: 0 20px;
+		@include inline-block;
+	}
+}

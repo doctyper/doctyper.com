@@ -1,0 +1,371 @@
+@mixin gh-image($image) {
+	$akamai: "https://a248.e.akamai.net/assets.github.com/images/modules/dashboard/news/";
+	background: url($akamai + $image + ".png") no-repeat 0 15px;
+}
+
+body {
+	font-size: 12px;
+	@include typeface;
+	letter-spacing: -0.08em;
+	background: #eee;
+	@include bg-noise(#eee);
+	color: #444;
+}
+
+input, textarea, select {
+	padding: 8px;
+	@include typeface;
+}
+
+textarea, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+	background: #fff;
+	@include box-shadow(0 1px 1px rgba(black, 0.4) inset);
+	border: 0;
+}
+
+* {
+	@include box-sizing(border-box);
+}
+
+a {
+	color: #00aeef;
+	text-decoration: none;
+}
+
+#container {
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+section {
+	padding: 14px 0 50px;
+	border-top: 1px solid #ccc;
+
+	&#about {
+		font-size: 32.5px;
+	}
+
+	&#work {
+		ol li {
+			&:not(:first-child) {
+				margin-top: 10px;
+			}
+		}
+
+		figure {
+			padding: 10px;
+			position: relative;
+			background: #fff;
+
+			@include box-shadow(0 2px 4px rgba(black, 0.3));
+		}
+
+		figcaption {
+			padding: 9px 11px;
+			top: 25px;
+			right: -10px;
+			position: absolute;
+			background: #00aeef;
+			color: #fff;
+			font-size: 17px;
+			text-align: right;
+			@include box-shadow(0 1px 3px rgba(black, 0.5));
+
+			&:after {
+				bottom: -7px;
+				right: 3px;
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				content: "";
+				background: #248ab5;
+				@include rotate(45deg);
+				z-index: -1;
+
+				@include box-shadow(0 1px 3px rgba(black, 0.5));
+			}
+
+			a {
+				color: rgba(white, 0.75);
+				font-size: 14px;
+			}
+		}
+
+		.image {
+			border: 1px solid #eee;
+		}
+
+		img {
+			display: block;
+		}
+
+		h2 strong {
+			display: inline;
+		}
+
+		h2 em {
+			display: none;
+		}
+
+		[src*="google-inside-search"] {
+			margin: -31px 0 0 -31px;
+		}
+
+		[src*="legendary"] {
+			margin: -98px 0 0 -60px;
+		}
+
+		[src*="where-it-went-down"] {
+			margin: -28px 0 0;
+		}
+
+		[src*="logitech"] {
+			margin: -100px 0 0;
+		}
+
+		[src*="south-park-studios"] {
+			margin: -38px 0 0 -43px;
+		}
+
+		&.all {
+			clear: both;
+			@include pie-clearfix;
+
+			h2 strong {
+				display: none;
+			}
+
+			h2 em {
+				display: inline;
+			}
+
+			li {
+				margin: 0;
+				float: left;
+				width: 50%;
+
+				&:not(:first-child):not(:nth-child(2)) > div {
+					margin-top: 30px;
+					padding-top: 30px;
+					border-top: 1px dotted #bbb;
+				}
+
+				&:nth-child(odd) {
+					padding-right: 20px;
+				}
+
+				&:nth-child(even) {
+					padding-left: 20px;
+				}
+			}
+
+			figcaption {
+				margin: 30px 0 0 -10px;
+				padding: 0;
+				top: auto;
+				right: auto;
+				float: left;
+				position: static;
+				background: none;
+				text-align: left;
+				color: inherit;
+				@include box-shadow(none);
+				text-transform: uppercase;
+
+				&:after {
+					content: none;
+				}
+
+				h3 {
+					margin-bottom: 5px;
+				}
+
+				a {
+					font-size: 12px;
+					color: #00aeef;
+				}
+			}
+
+			.image {
+				overflow: hidden;
+			}
+		}
+	}
+
+	&#social {
+		@include pie-clearfix;
+		padding-top: 0;
+		border: 0;
+		line-height: 1.35;
+
+		> * {
+			float: left;
+			width: 50%;
+		}
+
+		h2 {
+			padding-top: 14px;
+			border-top: 1px solid #ccc;
+		}
+
+		ul > li {
+			padding: 15px 0;
+			border-top: 1px dotted #bbb;
+
+			&:first-child {
+				padding-top: 0;
+				border-top: 0;
+			}
+		}
+
+		#twitter {
+			padding-right: 20px;
+		}
+
+		#github {
+			padding-left: 20px;
+
+			ul > li {
+				padding-left: 22px;
+
+				&:first-child {
+					background-position: 0 0;
+				}
+			}
+		}
+
+		li li {
+			$sha-size: 53px;
+
+			padding-left: $sha-size;
+			margin-bottom: 3px;
+			vertical-align: middle;
+
+			a {
+				@include inline-block;
+				vertical-align: middle;
+				min-width: $sha-size;
+				margin-left: -($sha-size);
+			}
+		}
+
+		h4 {
+			font-size: 14px;
+
+			em {
+				margin-left: 5px;
+				color: #aaa;
+			}
+		}
+
+		h5 {
+			margin-bottom: 10px;
+			font-size: 12px;
+			color: #666;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		.meta {
+			color: #666;
+			margin-top: 10px;
+		}
+
+		.meta a {
+			font-size: 12px;
+			color: #666;
+		}
+
+		.pushed {
+			@include gh-image("push");
+		}
+
+		.created {
+			@include gh-image("create");
+		}
+
+		.watching {
+			@include gh-image("watch_started");
+		}
+
+		.opened {
+			@include gh-image("issues_opened");
+		}
+
+		.closed {
+			@include gh-image("issues_closed");
+		}
+
+		.commented {
+			@include gh-image("issues_comment");
+		}
+
+		.gist {
+			@include gh-image("gist");
+		}
+
+		.open {
+			@include gh-image("public");
+		}
+	}
+
+	&#contact {
+		form {
+			@include pie-clearfix;
+		}
+
+		fieldset {
+			padding-right: 20px;
+			width: 50%;
+			float: left;
+
+			&:last-child {
+				padding-right: 0;
+				padding-left: 20px;
+			}
+		}
+
+		label, input, textarea {
+			font-size: 12px;
+			width: 100%;
+			display: block;
+		}
+
+		input, textarea {
+			margin-bottom: 17px;
+		}
+
+		textarea {
+			height: 90px;
+		}
+
+		[type="submit"] {
+			margin: 0;
+			padding: 0;
+			float: right;
+			width: auto;
+			background: none;
+			border: 0;
+			font-size: 14px;
+			color: #00aeef;
+			text-transform: uppercase;
+		}
+	}
+}
+
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+h2 {
+	margin: 0 0 20px;
+	@include pie-clearfix;
+	font-size: 17px;
+
+	a {
+		float: right;
+		font-size: 14px;
+	}
+}
