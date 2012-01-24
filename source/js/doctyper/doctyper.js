@@ -17,7 +17,8 @@ var Doctyper = {
 				"create" : "created gist"
 			}
 		},
-		maxLength : 4
+		maxLength : 4,
+		slideInterval : 5000
 	},
 
 	enableWorkSwitcher : function () {
@@ -40,17 +41,36 @@ var Doctyper = {
 			return;
 		}
 
-		navItems.bind("click", function () {
-			el = $(this);
+		navItems.bind("click", $.proxy(function (e, auto) {
+			if (!auto) {
+				window.clearInterval(this.vars._interval);
+			}
+
+			el = $(e.currentTarget);
 
 			carouselList.removeAttr("class");
-			carouselList.addClass("position-" + (navItems.index(this) + 1));
+			carouselList.addClass("position-" + (navItems.index(el) + 1));
 
 			el.siblings().removeClass("active");
 			el.addClass("active");
-		});
 
-		navItems.first().trigger("click");
+			this.vars.activeItem = el;
+		}, this));
+
+		navItems.first().addClass("active");
+
+		this.vars.activeItem = navItems.first();
+		this.vars.navItems = navItems;
+
+		this.vars._interval = window.setInterval($.proxy(this.cycleCarousel, this), this.vars.slideInterval);
+	},
+
+	cycleCarousel : function () {
+		var next = this.vars.activeItem.next();
+		next = next[0] ? next : this.vars.navItems.first();
+
+		this.vars.navItems.removeClass("active");
+		next.trigger("click", true);
 	},
 
 	callTwitterAPI : function () {
