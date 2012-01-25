@@ -1,5 +1,75 @@
+$transition-duration: 500ms;
+
+.carousel {
+	position: relative;
+
+	ul {
+		bottom: -35px;
+		left: 0;
+		width: 100%;
+		position: absolute;
+		text-align: center;
+
+		li {
+			margin: 0 1px;
+			padding: 0;
+			text-indent: -9999px;
+			@include inline-block;
+			width: 10px;
+			height: 10px;
+			border: 2px solid #00aeef;
+			@include border-radius(5px);
+			cursor: pointer;
+			@include transition(all $transition-duration $ease-out-expo);
+
+			&:hover {
+				background: #fff;
+			}
+
+			&.active {
+				background: #00aeef;
+			}
+		}
+	}
+}
+
+#work.all .carousel {
+	ol li {
+		position: static;
+		@include translateZ(0);
+	}
+
+	ul {
+		display: none;
+	}
+}
+
+.no-csstransitions, .no-csstransforms3d {
+	.carousel {
+		ol {
+			position: relative;
+			min-height: 400px;
+			pointer-events: none;
+
+			li {
+				margin-top: 10px;
+				top: 0;
+				left: 0;
+				position: absolute;
+				opacity: 0;
+			}
+
+			@for $i from 1 through 5 {
+				&.position-#{$i} li:nth-child(#{$i}) {
+					opacity: 1;
+					pointer-events: auto;
+				}
+			}
+		}
+	}
+}
+
 .csstransitions.csstransforms3d {
-	$transition-duration: 500ms;
 	$translate-z-increment: 300;
 
 	.carousel {
@@ -53,44 +123,5 @@
 				$z: $z + $translate-z-increment;
 			}
 		}
-
-		ul {
-			bottom: -35px;
-			left: 0;
-			width: 100%;
-			position: absolute;
-			text-align: center;
-
-			li {
-				margin: 0 1px;
-				padding: 0;
-				text-indent: -9999px;
-				@include inline-block;
-				width: 10px;
-				height: 10px;
-				border: 2px solid #00aeef;
-				@include border-radius(5px);
-				cursor: pointer;
-
-				&:hover {
-					background: #fff;
-				}
-
-				&.active {
-					background: #00aeef;
-				}
-			}
-		}
 	}	
-
-	#work.all .carousel {
-		ol li {
-			position: static;
-			@include translateZ(0);
-		}
-
-		ul {
-			display: none;
-		}
-	}
 }

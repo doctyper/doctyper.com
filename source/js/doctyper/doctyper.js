@@ -37,10 +37,6 @@ var Doctyper = {
 			navItems = work.find(".carousel ul li"),
 			el;
 
-		if (!Modernizr.csstransforms3d && !Modernizr.csstransitions) {
-			return;
-		}
-
 		navItems.bind("click", $.proxy(function (e, auto) {
 			if (!auto) {
 				window.clearInterval(this.vars._interval);
@@ -57,11 +53,9 @@ var Doctyper = {
 			this.vars.activeItem = el;
 		}, this));
 
-		navItems.first().addClass("active");
+		navItems.first().trigger("click", true);
 
-		this.vars.activeItem = navItems.first();
 		this.vars.navItems = navItems;
-
 		this.vars._interval = window.setInterval($.proxy(this.cycleCarousel, this), this.vars.slideInterval);
 	},
 
