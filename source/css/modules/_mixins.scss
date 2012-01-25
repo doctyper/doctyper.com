@@ -1,7 +1,30 @@
 // Default font
 @mixin typeface {
 	// From: Better Helvetica Font Stack http://j.mp/9t6O6Z
-	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-family: "museo-sans-1", "museo-sans-2", "Helvetica Neue", Arial, sans-serif;
+}
+
+@mixin museo-sans-500 {
+	font-family: "museo-sans-1", "museo-sans-2", sans-serif;
+}
+
+@mixin museo-sans-300 {
+	@include museo-sans-500;
+	font-weight: 300;
+}
+
+@mixin museo-sans-700 {
+	@include museo-sans-500;
+	font-weight: 700;
+}
+
+@mixin futura-book {
+	font-family: "futura-pt-1", "futura-pt-2", sans-serif;
+}
+
+@mixin futura-medium {
+	@include futura-book;
+	font-weight: 500;
 }
 
 // Global transition

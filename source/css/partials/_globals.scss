@@ -43,6 +43,10 @@ section {
 
 	&#about {
 		font-size: 32.5px;
+
+		p {
+			@include futura-book;
+		}
 	}
 
 	&#work {
@@ -194,6 +198,7 @@ section {
 
 	&#social {
 		@include pie-clearfix;
+		@include museo-sans-500;
 		padding-top: 0;
 		border: 0;
 		line-height: 1.35;
@@ -250,6 +255,7 @@ section {
 		}
 
 		h4 {
+			@include museo-sans-700;
 			font-size: 14px;
 
 			em {
@@ -269,6 +275,7 @@ section {
 		}
 
 		.meta {
+			@include museo-sans-300;
 			color: #666;
 			margin-top: 10px;
 		}
@@ -357,6 +364,7 @@ section {
 
 h1, h2, h3 {
 	text-transform: uppercase;
+	@include museo-sans-500;
 }
 
 h2 {

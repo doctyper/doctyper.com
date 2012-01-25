@@ -13,6 +13,9 @@ html.no-js lang="en"
 
     == stylesheet_link_tag "style.css"
     == javascript_include_tag "libs/modernizr.js"
+    == javascript_include_tag "http://use.typekit.com/bvz2nhn.js"
+    javascript:
+      try{Typekit.load();}catch(e){}
   body
     #container
       header
