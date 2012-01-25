@@ -1,0 +1,69 @@
+@-webkit-keyframes adjust-glasses {
+	from {
+		-webkit-transform: translate3d(0, 0, 0);
+	}
+
+	40% {
+		-webkit-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	65% {
+		-webkit-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	85% {
+		-webkit-transform: rotateZ(-5deg) translateZ(0);
+	}
+
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+	}
+}
+
+@-moz-keyframes adjust-glasses {
+	from {
+		-moz-transform: translate3d(0, 0, 0);
+	}
+
+	40% {
+		-moz-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	65% {
+		-moz-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	85% {
+		-moz-transform: rotateZ(-5deg) translateZ(0);
+	}
+
+	to {
+		-moz-transform: translate3d(0, 0, 0);
+	}
+}
+
+@-ms-keyframes adjust-glasses {
+	from {
+		-ms-transform: translate3d(0, 0, 0);
+	}
+
+	40% {
+		-ms-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	65% {
+		-ms-transform: rotateZ(10deg) translateZ(0);
+	}
+
+	85% {
+		-ms-transform: rotateZ(-5deg) translateZ(0);
+	}
+
+	to {
+		-ms-transform: translate3d(0, 0, 0);
+	}
+}
+
+header:hover img {
+	@include experimental(animation, adjust-glasses 1s ease-in-out);
+}
