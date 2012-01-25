@@ -4,10 +4,9 @@ header {
 	font-size: 17px;
 	@include futura-medium;
 
-	#me {
-		margin-top: 40px;
-		padding-top: 55px;
-		background: inline-image("geek.png") no-repeat center top;
+	img {
+		margin: 40px auto 10px;
+		display: block;
 	}
 
 	h1 {
