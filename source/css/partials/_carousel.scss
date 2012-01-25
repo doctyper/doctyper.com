@@ -36,7 +36,7 @@ $transition-duration: 500ms;
 #work.all .carousel {
 	ol li {
 		position: static;
-		@include translateZ(0);
+		@include experimental(transform, translateZ(0));
 	}
 
 	ul {
@@ -74,17 +74,26 @@ $transition-duration: 500ms;
 
 	.carousel {
 		position: relative;
-		@include perspective(800);
-		@include perspective-origin(center bottom);
+		@include experimental(perspective, 800);
+		@include experimental(perspective-origin, center bottom);
 
 		ol, li, img {
-			@include transform(translate3d(0, 0, 0));
+			@include experimental(transform, translate3d(0, 0, 0));
 		}
 
 		ol, li {
 			@include transform-origin(50%, 100%);
-			@include transition(all $transition-duration $ease-out-expo, opacity ($transition-duration / 3) $linear);
-			@include transform-style(preserve-3d);
+
+			-webkit-transition-property: all, opacity;
+			-moz-transition-property: all, opacity;
+
+			-webkit-transition-duration: $transition-duration, ($transition-duration / 3);
+			-moz-transition-duration: $transition-duration, ($transition-duration / 3);
+
+			-webkit-transition-timing-function: $ease-out-expo, $linear;
+			-moz-transition-timing-function: $ease-out-expo, $linear;
+
+			@include experimental(transform-style, preserve-3d);
 		}
 
 		ol {
@@ -106,18 +115,16 @@ $transition-duration: 500ms;
 
 			@for $i from 1 through 5 {
 				&.position-#{$i} {
-					@include translateZ(#{$z});
+					@include experimental(transform, translateZ(#{$z}));
 
-					@if ($i - 1 > 0) {
-						li:not(:nth-child(#{$i})) {
-							pointer-events: none;
-							opacity: 0;
-						}
+					li:not(:nth-child(#{$i})) {
+						pointer-events: none;
+						opacity: 0;
 					}
 				}
 
 				li:nth-child(#{$i}) {
-					@include translateZ(-(#{$z}));
+					@include experimental(transform, translateZ(-(#{$z})));
 				}
 
 				$z: $z + $translate-z-increment;
