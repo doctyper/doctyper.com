@@ -77,19 +77,19 @@ section {
 			text-align: right;
 			@include box-shadow(0 1px 3px rgba(black, 0.5));
 
-			&:after {
-				bottom: -7px;
-				right: 3px;
-				width: 14px;
-				height: 14px;
-				position: absolute;
-				content: "";
-				background: #248ab5;
-				@include rotate(45deg);
-				z-index: -1;
+//			&:after {
+//				bottom: -7px;
+//				right: 3px;
+//				width: 14px;
+//				height: 14px;
+//				position: absolute;
+//				content: "";
+//				background: #248ab5;
+//				@include rotate(45deg);
+//				z-index: -1;
 
-				@include box-shadow(0 1px 3px rgba(black, 0.5));
-			}
+//				@include box-shadow(0 1px 3px rgba(black, 0.5));
+//			}
 
 			a {
 				color: rgba(white, 0.75);

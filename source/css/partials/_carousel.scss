@@ -77,8 +77,12 @@ $transition-duration: 500ms;
 		@include experimental(perspective, 800);
 		@include experimental(perspective-origin, center bottom);
 
-		ol, li, img {
+		ol, li, figure, img {
 			@include experimental(transform, translate3d(0, 0, 0));
+		}
+
+		figcaption, figcaption * {
+			@include experimental(transform, none);
 		}
 
 		ol, li {
