@@ -1,4 +1,5 @@
-$transition-duration: 500ms;
+$transition-duration: 750ms;
+$translate-z-increment: 50;
 
 .carousel {
 	position: relative;
@@ -70,8 +71,6 @@ $transition-duration: 500ms;
 }
 
 .csstransitions.csstransforms3d {
-	$translate-z-increment: 300;
-
 	.carousel {
 		position: relative;
 		@include experimental(perspective, 800);
