@@ -86,7 +86,7 @@ $transition-duration: 500ms;
 		}
 
 		ol, li {
-			@include transform-origin(50%, 100%);
+			@include transform-origin(50%, 100%); 
 
 			-webkit-transition-property: all, opacity;
 			-moz-transition-property: all, opacity;
