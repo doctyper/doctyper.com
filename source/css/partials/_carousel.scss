@@ -73,7 +73,7 @@ $translate-z-increment: 50;
 .csstransitions.csstransforms3d {
 	.carousel {
 		position: relative;
-		@include experimental(perspective, 800);
+		@include experimental(perspective, 800px);
 		@include experimental(perspective-origin, center bottom);
 
 		ol, li, figure, img {
